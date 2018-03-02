@@ -12,3 +12,9 @@ body {
     margin-right: auto;
     margin-bottom:40px;
 }
+
+#mobile1 img, #mobile2 img {
+    width: 98%;
+    height: auto;
+    padding-top: 5px
+}
