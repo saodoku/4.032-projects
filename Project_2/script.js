@@ -6,11 +6,13 @@ d3.json("data/boston_weather.json",draw);
 function draw(error,data){
     var currWeather = data.currently;
     //drawing 1 parts
+    
     var tempdiv = document.getElementById("tempsection");
     var humiditydiv = document.getElementById("humiditysection");
     //WRITTEN SECTION FOR PART 2
     var txtdiv = document.getElementById("txtsection");
     txtdiv.style.fontSize = "20px";
+    txtdiv.style.textAlign = "center"
     txtdiv.style.fontFamily = "Fira Sans";
     
     //drawing 2 moving part (temp circles)
@@ -100,6 +102,7 @@ function draw(error,data){
     humidimg.src = "./images1/" + humidityType + ".png";
     tempimg.src = "./images1/" + tempType + ".png";
     
+ 
     //console.log(humidimg);
     //console.log(tempimg);
     txtdiv.style.backgroundColor = "rgba(149, 149, 149, 0.5)"; 

@@ -19,7 +19,7 @@ img{
 }
 
 .line2 {
-    width: 412px;
+    width: 411px;
     height: 2px;
     background-color: black;
     position: absolute;
@@ -40,12 +40,16 @@ img{
 #tempsection, #humiditysection{
     height: 50%;
     width : 100%;
+    
 }
 
 #imgsection{
-    height: 75%;
+    height: 70%;
     width : 100%;
+    position: relative;
 }
+
+
 
 #txtsection{
    height: 25%;
@@ -57,6 +61,7 @@ img{
     max-width: 100%
     height: auto;
     position: absolute;
+    
 }
 
 #tempsection img, #humiditysection img {
