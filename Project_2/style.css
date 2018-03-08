@@ -2,19 +2,74 @@ body {
     padding: 50px;
 }
 
+figure {
+    display: inline-block;
+}
+
+img{
+    max-width: 100%
+    height: auto
+}
+
+.line {
+    width: 411px;
+    height: 15px;
+    background-color: black;
+    position: absolute;
+}
+
+.line2 {
+    width: 412px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+}
+
 
 #mobile1,#mobile2 {
     width: 414px;
     height: 736px;
-    border: 1px solid;
+    border: 3px solid;
     float: left;
     margin-left: auto;
     margin-right: auto;
     margin-bottom:40px;
+    position: relative;
 }
 
-#mobile1 img, #mobile2 img {
-    width: 98%;
-    height: auto;
-    padding-top: 5px
+#tempsection, #humiditysection{
+    height: 50%;
+    width : 100%;
 }
+
+#imgsection{
+    height: 75%;
+    width : 100%;
+}
+
+#txtsection{
+   height: 25%;
+    width : 100%; 
+}
+
+
+#humcircles, #tempcircles{
+    max-width: 100%
+    height: auto;
+    position: absolute;
+}
+
+#tempsection img, #humiditysection img {
+    height: 100%;
+    width : 100%;
+}
+
+
+
+
+
+
+
+
+
+
