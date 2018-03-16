@@ -4,6 +4,7 @@
 d3.json("data/boston_weather.json",draw);
 
 function draw(error,data){
+<<<<<<< HEAD
     var currWeather = data.currently;
     //drawing 1 parts
     
@@ -123,3 +124,7 @@ function draw(error,data){
     
     }
     
+=======
+    console.log(data);
+}
+>>>>>>> upstream/master
