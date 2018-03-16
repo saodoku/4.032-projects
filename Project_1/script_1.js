@@ -82,22 +82,7 @@ function drawCanvas1() {
         ctx1.textBaseline="middle";
         ctx1.textAlign="center";
         ctx1.fillStyle = "#8b8989";
-        /*
-        for(num= 1; num < 61; num++){
-            if (num%5 == 0){
-                ang = num * Math.PI / 30;
-                clocknum = num/5
-                ctx1.rotate(ang);
-                ctx1.translate(0, -radius*0.85);
-                ctx1.moveTo(0, 0);
-                ctx1.rotate(-ang);
-                ctx1.fillText(clocknum.toString(), 0, 0);
-                ctx1.rotate(ang);
-                ctx1.translate(0, radius*0.85);
-                ctx1.rotate(-ang);
-                ctx1.restore();
-            } 
-            */
+     
         for(num= 1; num < 61; num++){
             if (num%1 == 0){
                 ang = num * Math.PI / 30;
@@ -134,9 +119,6 @@ function drawCanvas1() {
     minutes2 = ((minutes+0.5) * Math.PI / 30) + (seconds * Math.PI / (30 * 60));
     drawHand(minutes2, radius, 3, "#000000");
     
-    // second
-    //seconds = (seconds * Math.PI / 30);
-    //drawHand(seconds, radius * 0.9, 1.5, "#d30000");
 
     // the steps to draws the hands is the same for all of them
     // we can create a function, and then call it for each of the hands
