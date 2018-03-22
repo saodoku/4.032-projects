@@ -6,7 +6,26 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700" rel="stylesheet">
-    <link href="style.css" rel="stylesheet"/>  
+    <link href="style.css" rel="stylesheet"/> 
+    
+
+    <script type="text/javascript">
+        
+    function start_pos(){
+    document.getElementById("img").style.top = '550px';
+    document.getElementById("img").style.left = '550px'
+    }
+
+    function right(){ //Moves image to the right 
+    document.getElementById("img").style.top = '400px';
+    document.getElementById("img").style.left = '1000px';
+    }
+
+    function left(){ //moves image to the left
+    document.getElementById("img").style.top = '0px';
+    document.getElementById("img").style.left = '0px';
+    }
+    </script> 
 </head>
     
 <body>
@@ -52,18 +71,35 @@
         <br/>
         </h6>
         <div id="mobile2">
-            <div id = "headersection"></div>
-            <div id = "imgsection">
-            <img id = "tempcircles" src="images1/temp.png"/>
-            <img id = "humcircles" src="images1/humidity.png"/>
+            <div id = "imgsection2">
+            <div id = "temp1"></div>
             </div>
-            <div class="line2" id="line2"></div>
+            <div id = "imgsection1">
+            <div id = "hum1"></div>
+            </div>
+        
+            <div class="line2" id="line2">
+            &#128167;
+            <img src="images1/humidity.png" height=20px width= 98px/>
+            &deg;F  
+            <img src="images1/temp.png" height=98px width= 20px/>
+            </div>
+            
+            <div class="line3" id="line3"></div>
+    
             <div id = "txtsection">
+            <br />
+            <h2> Summary: </h2>
+    
+            Temperature: <span id="temper"></span>&deg;F
+            <br />
+            Humidity: <span id="hum"></span>%
+            <br />
+            Wind Speed: <span id="win"></span>mph
+                
             </div>
         </div>
     </div>
-            
-    
 </div>    
         
 <div class="row">

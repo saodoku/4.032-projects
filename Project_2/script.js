@@ -1,130 +1,136 @@
 //plots6
 // var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
 
-d3.json("data/boston_weather.json",draw);
+d3.json("data/boston_weather.json", draw);
 
 function draw(error,data){
-<<<<<<< HEAD
     var currWeather = data.currently;
-    //drawing 1 parts
     
+    //READING DATA
+    var temp = currWeather.temperature;
+    document.getElementById("temper").innerHTML = temp;
+    var humidity = currWeather.humidity *100; 
+    document.getElementById("hum").innerHTML = humidity;
+    var windSpeed = currWeather.windSpeed;
+    document.getElementById("win").innerHTML = windSpeed;
+    
+    //DRAWING 1 PARTS (divs)
     var tempdiv = document.getElementById("tempsection");
     var humiditydiv = document.getElementById("humiditysection");
-    //WRITTEN SECTION FOR PART 2
-    var txtdiv = document.getElementById("txtsection");
-    txtdiv.style.fontSize = "20px";
-    txtdiv.style.textAlign = "center"
-    txtdiv.style.fontFamily = "Fira Sans";
     
-    //drawing 2 moving part (temp circles)
-    var tempcirc = document.getElementById("tempcircles");
-    var objpos = tempcirc.style;
-    objpos.position = 'absolute';
-    //width of temp
-    var widthcirc = (tempcirc.clientWidth)/3;
-    
-    //for 1st drawing
+    //DRAWING 1 IMAGES
     var tempimg = document.createElement("img");
-    var humidimg = document.createElement("img");
-    
-    var temp = currWeather.temperature;
-    var humidity = currWeather.humidity *100;
-    var windSpeed = currWeather.windSpeed;
-    
-    //for 2nd drawing
-    var summary1 = document.createElement("H2")
-    var sum1 = document.createTextNode("Summary");
-    summary1.appendChild(sum1);
-    var summary2 = document.createTextNode("Temperature: "+ temp+ '\xB0');
-    var summary3 = document.createTextNode("Humidity: "+humidity+ "%");
-    var summary4 = document.createTextNode("Wind Speed: "+ windSpeed+ "mph");
-    
+    var humidimg = document.createElement("img"); 
+
+    //USED TO DETERMINE IMAGE USED--DRAWING 1
     var humidityType = "";
     var tempType = "";
-    
-    
-    // TOP (humidity)       
-    if (humidity < 45) {
-    humidityType = "lowhumid";
-    humiditydiv.style.backgroundColor = "rgba(51, 102, 136, 0.2)";     
-    }
-    
-    else if (humidity>=45 && humidity<=65){
-    humidityType = "medhumid";
-    humiditydiv.style.backgroundColor = "rgba(51, 102, 136, 0.59)";
-         if (temp < 45) {
-        //left 1, down 1 
-        tempcirc.transform = "translate("+ 0 +"," +-widthcirc+")";
+
+    //DASHBOARD 1
+    function dash1(){
+        // TOP (humidity)
+        if (humidity < 45) {
+        humidityType = "lowhumid";
+        humiditydiv.style.backgroundColor = "rgba(51, 102, 136, 0.2)";     
         }
-        //left 1
-        else if (temp>= 45 && temp<75){
-        tempcirc.transform = "translate("+ 0 +"," + 0+")";
-        }
-        //left 1, up 1
+        else if (humidity>=45 && humidity<=65){
+        humidityType = "medhumid";
+        humiditydiv.style.backgroundColor = "rgba(51, 102, 136, 0.59)";
+        }   
         else{
-        tempcirc.transform = "translate("+ 0 +"," + widthcirc+")";
-        } 
-    }   
-    else{
-    humidityType = "highhumid";
-    humiditydiv.style.backgroundColor = "#336688";
-    //right 1
-    tempcirc.transform = "translate("+ 1 +"," + 0+")";
+        humidityType = "highhumid";
+        humiditydiv.style.backgroundColor = "#336688";
+        }
+        
+        // BOTTOM (temp)
         if (temp < 45) {
-        //left 1, down 1 
-        tempcirc.transform = "translate("+ 0 +"," +-widthcirc+")";
+        tempType = "cold";
+        tempdiv.style.backgroundColor = "hsl(204, 4%, 37%)";
+        // instead of background color, use trnasform
         }
-        //left 1
         else if (temp>= 45 && temp<75){
-        tempcirc.transform = "translate("+ 0 +"," + 0+")";
+        tempType = "avg";
+        tempdiv.style.backgroundColor = "#FFCC00"; 
         }
-        //left 1, up 1
         else{
-        tempcirc.transform = "translate("+ 0 +"," + widthcirc+")";
+        tempType = "hot";
+        tempdiv.style.backgroundColor = "#FF9900";
         } 
-    }
+        
+        // set up img you will use    
+        humidimg.src = "./images1/" + humidityType + ".png";
+        tempimg.src = "./images1/" + tempType + ".png";
+
+        humiditydiv.appendChild(humidimg);
+        tempdiv.appendChild(tempimg);
+        }
+    dash1();
     
-    // BOTTOM (temp)
-    if (temp < 45) {
-    tempType = "cold";
-    tempdiv.style.backgroundColor = "hsl(204, 45%, 37%)";
-    // instead of background color, use trnasform
-    }
-    else if (temp>= 45 && temp<75){
-    tempType = "avg";
-    tempdiv.style.backgroundColor = "#FFCC00"; 
-    }
+    //DASHBOARD 2
+    
+    //drawing 2 divs (default)
+    humcircdiv = document.getElementById("hum1");
+    tempcircdiv = document.getElementById("temp1");
+        
+    //drawing 2 moving part (temp circles)
+    var tempcirc = document.createElement('img');
+    tempcirc.src = "images1/temp.png";
+    var humcirc = document.createElement('img');
+    humcirc.src = "images1/humidity.png";
+    
+    tempcircdiv.appendChild(tempcirc);
+    humcircdiv.appendChild(humcirc);
+    
+    function dash2(){
+        //CONDITIONS FOR HUMIDITY
+        function set_hum(){
+        if (humidity < 35) {
+        humcircdiv.setAttribute("id", "hum1");
+        }
+        else if (humidity>=35 && humidity<50){
+        humcircdiv.setAttribute("id", "hum2");
+        }   
+        else if (humidity>=50 && humidity<60){
+        humcircdiv.setAttribute("id", "hum3");
+        } 
+        else if (humidity>=60 && humidity<=75){
+        humcircdiv.setAttribute("id", "hum4");
+        } 
+        else{
+        humcircdiv.setAttribute("id", "hum5");
+        }
+        }
+
+    if (temp < 35) {   
+    tempcircdiv.setAttribute("id", "temp1");    
+    set_hum();}
+
+    else if (temp>= 35 && temp<50){   
+    tempcircdiv.setAttribute("id", "temp2");    
+    set_hum();}
+        
+    else if (temp>= 50 && temp<65){    
+    tempcircdiv.setAttribute("id", "temp3");
+    set_hum();}
+    
+    else if (temp>= 65 && temp<80){     
+    tempcircdiv.setAttribute("id", "temp4");
+    set_hum();}
+        
     else{
-    tempType = "hot";
-    tempdiv.style.backgroundColor = "#FF9900";
-    }  
-    
-    // console.log(humidimg.src);
-    humidimg.src = "./images1/" + humidityType + ".png";
-    tempimg.src = "./images1/" + tempType + ".png";
-    
- 
-    //console.log(humidimg);
-    //console.log(tempimg);
-    txtdiv.style.backgroundColor = "rgba(149, 149, 149, 0.5)"; 
-    
-    humiditydiv.appendChild(humidimg);
-    tempdiv.appendChild(tempimg);
-    
-    txtdiv.appendChild(summary1);
-    txtdiv.appendChild(document.createElement("br"));
-    txtdiv.appendChild(summary2);
-    txtdiv.appendChild(document.createElement("br"));
-    txtdiv.appendChild(summary3);
-    txtdiv.appendChild(document.createElement("br"));
-    txtdiv.appendChild(summary4);
-    
-    txtdiv.appendChild(humidity);
-    txtdiv.appendChild(windSpeed);
-    
+    tempcircdiv.setAttribute("id", "temp5");
+    set_hum();
     }
+   
+    }
+    dash2();
     
-=======
     console.log(data);
-}
->>>>>>> upstream/master
+    }
+draw()
+   
+// NOTES FROM OH WITH IRENE: 
+//can do d3.select("name").html(variable) can help you prevent creating elt in js IE:
+// <p>temperature:<span id=tempValue></span>/p>
+// Keyboard: "Command" + "/" allows you to comment out a whole block of code
+    
