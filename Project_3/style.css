@@ -1,7 +1,6 @@
+/*EKE'S CSS BELOW:*/
 body {
-    padding: 50px;
-}
-
+    padding: 50px;}
 
 #viz-container {
     width: 100%;
@@ -12,61 +11,103 @@ body {
     margin-right: auto;
     margin-bottom:40px;
     padding: 70px;
-}
+    }
 
 #viz-container h1 {
     font-size: 30px;
     font-weight: bold;
-}
+    background: #645f5f;
+    }
 
 .data-container {
-    float: right;
+    float: left;
     clear: both;
     width: 100%;
-}
+    position: relative;
+    background: #645f5f;
+    color:white;}
 
 .income-bar, .private-bar {
     height: 20px;
-    background: linear-gradient(-90deg, #FFE9AC, white);
-    border-radius: 29px;
-}
+    background: repeating-linear-gradient(
+  90deg,
+  #D9AE68,
+  #D9AE68 10px,
+  #8A5B0F 10px,
+  #8A5B0F 20px
+);
+    border-radius: 2px;}
 
 .income-bar {
     float: right;
-    background: linear-gradient(90deg, #C18FDB, white);
-}
+    background: repeating-linear-gradient(
+  90deg,
+  white,
+  white 10px,
+  grey 10px,
+  grey 20px
+);}
 
 .bar-holder, .state-holder {
     display: inline-block;
     overflow: hidden;
-    height: 40px;
-}
+    height: 40px;}
 
 .bar-holder {
-    width: 45%;
-}
+    width: 45%;}
 
 .state-holder {
     width: 10%;
     text-align: center;
     font-size: 15px;
-    font-weight: bold;
-}
+    font-weight: bold;}
 
 #graph {
     height: 666px;
-    overflow: scroll;
-}
+    overflow: scroll;}
 
 .legend {
     font-size: 10pt;
     font-weight: bold;
     position: absolute;
     bottom: 0;
-    margin-bottom: 70px;
-}
+    margin-bottom: 70px;}
 
 .legend p{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+/*KARA'S CSS BELOW*/
+
+/*body { font: 12px Arial;}*/
+
+path {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;}
+
+.tooltip {
+	background: #eee;
+	box-shadow: 0 0 5px #999999;
+	color: #333;
+	font-size: 12px;
+	left: 130px;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+	top: 95px;
+	z-index: 10;
+	display: block;
+	opacity: 0;}
+
+.title{
+font-size:55px;
+}
+
