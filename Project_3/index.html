@@ -2,52 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project 3 </title>
+    <title>Census Data - Project3</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet"/>
 </head>
+    
 <body>
+    
+<!--    TITLE-->
+<center class="title"> Private School Attending Rates </center>   
+<br><br><br><br>
+    
+<!--ALL OF OUR GRAPHS  -->
 <div class="container">
     <div class="row">
-        <h1 class="col-md-12">First Dashboard</h1>
-        <div id="viz-container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h1>Income vs.<br/>
-                        Private<br/>
-                        School<br/>
-                        Enrollment<br/>
-                    </h1>
-                    <div class="legend">
-                        <div class="income-bar" style="width: 200px; float: none"></div>
-                        <p>
-                            Income
-                        </p>
-                        <div class="private-bar" style="width: 200px"></div>
-                        <p>
-                            Private School<br/>
-                            Enrollment
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div id="graph">
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
+        
+    <!--DANIELA'S DIV (including title)-->
+    <h1 class="col-md-12">Projected Concentration of Birth per State in 2019</h1>
+    <div id="viz-container">
+    
+        <div id="graphDataRepresentations" class="col-14">
+            <div id="birthPerState" class="col-12">
+                <div id="birthKey" class="col-3" style="top:400px"> </div>
+                <div id="birthMap" class="col-9"style="top:100px"> </div>
+            </div>          
+        </div>       
     </div>
-</div>
+    </div>
+        
+    
+    <!--KARA'S DIV (including title)-->   
+    
+    <h1 class="col-md-12">Projected Matriculation Rate per Year (2022-2036)</h1>
+    <div id="viz-container">
+    <svg class="chart"></svg>
+    <div id="graphDataRepresentations" class="col-12" >
+        <div id="birthPerState" class="col-12">
+            <div id="birthKey" class="col-3"> </div>
+            <div id="birthMap" class="col-9"> </div>
+        </div>
+        <div id="DotMatrix"></div>
+    </div>
+    </div>  
+    </div>
+    
+    <!--EKE'S DIV (including title)--> 
+    
+    <h1 class="col-md-12">Income vs. Private School Enrollment per State</h1>
+    <div id="viz-container">
+    <div class="row">
+    <div class="col-md-3">
+        <div class="legend">
+            <div class="income-bar" style="width: 200px; float: none"></div>
+            <p>Income</p>
+            <div class="private-bar" style="width: 200px"></div>
+            <p> Private School<br/>Enrollment</p>
+        </div>
+    </div>
+        <div class="col-md-9">
+            <div id="graph"></div>
+        </div>
+    </div>
+    </div>
+
 
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
 <script src="script.js"></script>
+<script src="script1.js"></script>
+<script src="script2.js"></script>
 
 </body>
 </html>

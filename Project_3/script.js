@@ -1,7 +1,6 @@
 load_income_data();
 
 function abbrState(input){
-
     var states = {
         "Arizona":"AZ",
         "Alabama":"AL",
@@ -57,9 +56,10 @@ function abbrState(input){
         "Wyoming":"WY"
     };
 
-    input = input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    input = input.replace(/\w\S*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 
-    return states[input];
+        return states[input];
 }
 
 function load_income_data() {
@@ -86,13 +86,10 @@ function load_income_data() {
         });
 
         load_private_school_data(states, incomes);
-
-    });
-
+   });
 }
 
 function load_private_school_data(states, incomes) {
-
     // Private school data query in csv
     var private_school_percent_query = "Percent in private school; Estimate; Population 3 years and over enrolled in school";
 
@@ -118,9 +115,7 @@ function load_private_school_data(states, incomes) {
             return {
                 state: state_abbr,
                 private: private_school,
-                income: income
-            }
-
+                income: income       }
         });
 
         // draw graph
@@ -129,11 +124,9 @@ function load_private_school_data(states, incomes) {
 }
 
 function draw(data) {
-
     // order data by largest income
     data = _.sortBy(data, function (d) {
-        return -d.income
-    });
+        return -d.income   });
 
     // place to containers for the bar graph in the html file
     var containers = d3.select('#graph')
