@@ -12,7 +12,7 @@ var birthPerStatePlot = d3.select('#graphDataRepresentations-k');
 d3.csv("data/Population/Projected Births 2016 to 2060.csv", function(data) {console.log(data);
 });
 
-d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(error, csv_data) {
+d3.csv("data/Population/Projected Births 2016 to 2060.csv", function(error, csv_data) {
  var data = d3.nest()
   .key(function(d) { return +d.YEAR + 5;})
   .rollup(function(d) { 
