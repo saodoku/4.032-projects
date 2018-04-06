@@ -13,7 +13,7 @@ var percentageOfPopulationByState;
 var projectedBirthsPerState;
 
 //this is the data set that i'm using - return state & its total pop'n
-d3.csv("/data/Population/ACSST5Y2016_S0101_with_ann_2018-01-24T215546EST_EDITED.csv", 
+d3.csv("data/Population/ACSST5Y2016_S0101_with_ann_2018-01-24T215546EST_EDITED.csv", 
     function(d) {return {
         state: d["${dim.label}"],
         totalPopulation: +d["Total; Estimate; Total population"]

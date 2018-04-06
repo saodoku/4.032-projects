@@ -9,7 +9,7 @@ console.log(height1)
 var birthPerStatePlot = d3.select('#graphDataRepresentations-k');
 
 //this is the entire data set 
-d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(data) {console.log(data);
+d3.csv("data/Population/Projected Births 2016 to 2060.csv", function(data) {console.log(data);
 });
 
 d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(error, csv_data) {
