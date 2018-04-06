@@ -78,6 +78,10 @@ function load_income_data() {
 
         // get scale for income
         var max   = d3.max(incomes);
+        var min   = d3.min(incomes);
+        
+        
+        
         var scale = d3.scaleLinear().domain([0, max]).range([0, 95]);
 
         // normalize income to be between 0 and 100
@@ -103,6 +107,8 @@ function load_private_school_data(states, incomes) {
 
         // get scale for private school
         var max   = d3.max(privates);
+        var min   = d3.min(privates);
+        
         var scale = d3.scaleLinear().domain([0, max]).range([0, 95]);
 
         // combine state, income, and private school data

@@ -82,14 +82,15 @@ path {
 
 .axis path, .axis line {
 	fill: none;
-	stroke: #11314a;
+	stroke: #52089d;
+    color: #52089d;
 	stroke-width: 1;
 	shape-rendering: auto;}
 
 .tooltip {
 	background: #eee;
 	box-shadow: 0 0 5px #999999;
-	color: #11314a;
+	color: #52089d;
 	font-size: 12px;
 	left: 130px;
 	padding: 10px;

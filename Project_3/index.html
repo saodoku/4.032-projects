@@ -10,15 +10,33 @@
 <body>
     
 <!--    TITLE-->
-<center class="title"> Private School Attending Rates </center>   
-<br><br><br><br>
-    
+<center class="title"> Private School Attending Rates </center> 
+<br><br><br>
+
+   
 <!--ALL OF OUR GRAPHS  -->
 <div class="container">
+    
+    <div class="row">
+        
+    <!--EXPLANATION OF DATA-->
+    <h1 class="col-md-14">Our Mission</h1>
+    <h3 class="col-md-14"> We were interested in exploring any potential correlations between income level and private vs public school enrollment. <br><br>
+        
+    Using the data set for analysis, we explored this correlation across state boundaries. </h3>
+    </div>
+    
+    
+   <br><br><br><br> 
+    
+    
     <div class="row">
         
     <!--DANIELA'S DIV (including title)-->
-    <h1 class="col-md-12">Projected Concentration of Birth per State in 2019</h1>
+    <h1 class="col-md-14">Projected Concentration of Birth per State in 2019</h1>
+        <br>
+    <h3 class="col-md-14"> This map shows the projected concentration of births per state in 2019 with the different states projected to have births ranging from 500,000 to 4.5 million. </h3>
+        <br>
     <div class="viz-container">
         <div id="graphDataRepresentations-d" class="col-14">
             <div id="birthPerState" class="col-12">
@@ -28,11 +46,21 @@
         </div>       
     </div>
     </div>
+    
+    <br><br><br>
         
     
     <!--KARA'S DIV (including title)-->   
     
-    <h1 class="col-md-12">Projected Matriculation Rate per Year (2022-2036)</h1>
+    <h1 class="col-md-14">Projected Matriculation Rate per Year (2022-2036)</h1>
+    <h3 class="col-md-14"> This map shows the projected matriculation to kindergarten for each year from 2022 to 2036. 
+    <br><br>
+    The x-axis represents the years and the y-axis represents the projected number of students entering kindergarten for that year. </h3>
+    <br>
+    *number based on matriculation at age 7*
+    <br>
+    <br>
+    
     <div class="viz-container">
         <div id="test-1" class="chart"></div>
         <div id="graphDataRepresentations-k" class="col-12" >
@@ -42,19 +70,31 @@
             </div>
             <div id="DotMatrix"></div>
         </div>
-    </div>  
+    </div> 
     
+    <br><br><br><br><br><br>
     <!--EKE'S DIV (including title)--> 
     
-    <h1 class="col-md-12">Income vs. Private School Enrollment per State</h1>
+    <h1 class="col-md-14">Income vs. Private School Enrollment per State</h1>
+    <h3 class="col-md-14"> This visualization outlays the income nand private school enrollment per state to analyze for any potential correlations between the two.
+    <br>
+    <br>
     <div class="viz-container">
         <div class="row">
             <div class="col-md-3">
                 <div class="legend">
                     <div class="income-bar" style="width: 200px; float: none"></div>
+                    <div>
+                        <div id="income-min"></div>
+                        <div id="income-max"></div>
+                    </div>
                     Income
                     <div class="private-bar" style="width: 200px"></div>
                     Private School Enrollment
+                    <div>
+                        <div id="private-min"></div>
+                        <div id="private-max"></div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-9">
