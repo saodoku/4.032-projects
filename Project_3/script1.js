@@ -1,14 +1,14 @@
 //this height and width is the height and width of the whole section where our graph representations should go 
 var margin1 = {t: 10, r: 20, b: 20, l: 5}; //this is an object
-var width1 = d3.select('#graphDataRepresentations').node().clientWidth - margin1.r - margin1.l;
-var height1 = d3.select('#graphDataRepresentations').node().clientHeight;
+var width1 = d3.select('#graphDataRepresentations-d').node().clientWidth - margin1.r - margin1.l;
+var height1 = d3.select('#graphDataRepresentations-d').node().clientHeight;
 console.log(width1);
 
 var margin2 = {t: 10, r: 100, b: 20, l: 20}; 
 var width2 = d3.select('#birthPerState').node().clientWidth - margin2.r - margin2.l,
     height2 = (d3.select('#birthPerState').node().clientHeight) - margin2.t - margin2.b-20 ;
 
-var birthPerStatePlot = d3.select('#graphDataRepresentations');
+var birthPerStatePlot = d3.select('#graphDataRepresentations-d');
 var percentageOfPopulationByState;
 var projectedBirthsPerState;
 
@@ -83,7 +83,7 @@ var path = d3.geoPath() // path generator that will convert GeoJSON to SVG paths
 var svg = d3.select("#birthMap")
   .append("svg")
   .attr("width", 1200)
-  .attr("height", 1000);
+  .attr("height", 736);
 
 var extentProjectedBirths = d3.extent(data, function(d) {
         return d.projectedBirths;

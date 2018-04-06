@@ -2,9 +2,9 @@
 body {
     padding: 50px;}
 
-#viz-container {
-    width: 100%;
-    height: 736px;
+.viz-container {
+    width: 1240px;
+    min-height: 736px;
     border: 1px solid;
     float: left;
     margin-left: auto;
@@ -13,22 +13,26 @@ body {
     padding: 70px;
     }
 
-#viz-container h1 {
+.viz-container h1 {
     font-size: 30px;
     font-weight: bold;
     background: #645f5f;
     }
 
+/*rows of the income vs private graph */
 .data-container {
+    margin-top: 3px;
     float: left;
     clear: both;
     width: 100%;
-    position: relative;
-    background: #645f5f;
-    color:white;}
+    position: inherit;
+    background: white;
+    }
 
 .income-bar, .private-bar {
     height: 20px;
+    margin-top: 26px;
+    margin-right: 0 px;
     background: repeating-linear-gradient(
   90deg,
   #D9AE68,
@@ -41,7 +45,7 @@ body {
 .income-bar {
     float: right;
     background: repeating-linear-gradient(
-  90deg,
+  -90deg,
   white,
   white 10px,
   grey 10px,
@@ -50,8 +54,8 @@ body {
 
 .bar-holder, .state-holder {
     display: inline-block;
-    overflow: hidden;
-    height: 40px;}
+    overflow: visible;
+    height: 45px;}
 
 .bar-holder {
     width: 45%;}
@@ -59,44 +63,33 @@ body {
 .state-holder {
     width: 10%;
     text-align: center;
-    font-size: 15px;
+    font-size: 20pt;
     font-weight: bold;}
 
-#graph {
-    height: 666px;
-    overflow: scroll;}
-
 .legend {
-    font-size: 10pt;
+    font-size: 15pt;
     font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 70px;}
-
-.legend p{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
+    position: relative;
+    top: 15;
+    margin-bottom: 0px;}
 
 /*KARA'S CSS BELOW*/
 
-/*body { font: 12px Arial;}*/
-
 path {
-  stroke: steelblue;
-  stroke-width: 2;
+  stroke: gray;
+  stroke-width: 5;
   fill: none;}
 
 .axis path, .axis line {
 	fill: none;
-	stroke: grey;
+	stroke: #11314a;
 	stroke-width: 1;
-	shape-rendering: crispEdges;}
+	shape-rendering: auto;}
 
 .tooltip {
 	background: #eee;
 	box-shadow: 0 0 5px #999999;
-	color: #333;
+	color: #11314a;
 	font-size: 12px;
 	left: 130px;
 	padding: 10px;
@@ -105,7 +98,7 @@ path {
 	top: 95px;
 	z-index: 10;
 	display: block;
-	opacity: 0;}
+	opacity: 5;}
 
 .title{
 font-size:55px;

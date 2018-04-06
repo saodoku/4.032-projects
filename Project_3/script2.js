@@ -1,12 +1,12 @@
 //this height and width is the height and width of the whole section where our graph representations should go 
 var margin1 = {t: 10, r: 0, b: 20, l: 80}; //this is an object
-var width1 = d3.select('#graphDataRepresentations').node().clientWidth - margin1.r - margin1.l;
+var width1 = d3.select('#graphDataRepresentations-k').node().clientWidth - margin1.r - margin1.l;
 var height1 = 500;
 
 console.log(width1);
 console.log(height1)
 
-var birthPerStatePlot = d3.select('#graphDataRepresentations');
+var birthPerStatePlot = d3.select('#graphDataRepresentations-k');
 
 //this is the entire data set 
 d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(data) {console.log(data);
@@ -30,7 +30,7 @@ d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(error, csv
 // append the svg object to the body of the page
 // append a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#test-1").append("svg")
     .attr("width", width1 + margin1.l + margin1.r)
     .attr("height", height1 + margin1.t + margin1.b)
     .append("g")
@@ -52,6 +52,7 @@ d3.csv("/data/Population/Projected Births 2016 to 2060.csv", function(error, csv
       .data(data)
       .enter().append("rect")
       .attr("class", "bar")
+      .attr("style",  "color:gray")
       .attr("x", function(d) { return x(Object.values(d)[0]); })
       .attr("width", x.bandwidth())
       .attr("y", function(d) { return y(Object.values(d)[1]); })
